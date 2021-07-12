@@ -2,16 +2,17 @@ class: middle, center, title-slide
 count: false
 
 # Distributed statistical inference
-# with pyhf enabled through funcX
+# with pyhf powered funcX
 
 .huge.blue[Matthew Feickert]<br>
-.huge[(University of Illinois at Urbana-Champaign)]
-<br><br>
-[matthew.feickert@cern.ch](mailto:matthew.feickert@cern.ch)
 
-[vCHEP 2021](https://indico.cern.ch/event/948465/contributions/4324013/)
+<!-- Provided by fontawesome under the Creative Commons Attribution 4.0 International license https://fontawesome.com/license -->
+.width-02[![email](figures/email.svg)] [matthew.feickert@cern.ch](mailto:matthew.feickert@cern.ch)<br>
+.width-02[![Twitter](figures/twitter.svg)] [@HEPfeickert](https://twitter.com/HEPfeickert)<br>
+.width-02[![GitHub](figures/github.svg)] [matthewfeickert](https://github.com/matthewfeickert)
 
-May 20th, 2021
+[SciPy 2021](https://youtu.be/FrH9s3eB6fU)<br>
+July 15th, 2021
 
 ---
 # Authors
