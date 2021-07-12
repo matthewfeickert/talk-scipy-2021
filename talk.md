@@ -32,7 +32,8 @@ CERN
 
 [Matthew Feickert](https://www.matthewfeickert.com/)
 
-Illinois
+University of Illinois<br>
+Urbana-Champaign
 ]
 .kol-1-4.center[
 .circle.width-80[![Giordon](figures/collaborators/stark.jpg)]
@@ -46,7 +47,8 @@ UCSC SCIPP
 
 [Ben Galewsky](https://bengalewsky.github.io/about/)
 
-NCSA/Illinois
+National Center for<br>
+Supercomputing Applications/Illinois
 ]
 ]
 
