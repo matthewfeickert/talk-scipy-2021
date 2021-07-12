@@ -53,6 +53,57 @@ Supercomputing Applications/Illinois
 ]
 
 ---
+# We're high energy particle physicists
+.kol-1-2.center[
+<br>
+.width-95[[![LHC](figures/LHC.jpg)](https://home.cern/science/accelerators/large-hadron-collider)]
+LHC
+]
+.kol-1-2.center[
+.width-95[[![ATLAS_TRex](figures/ATLAS_TRex.png)](https://atlas.cern/)]
+ATLAS
+]
+.kol-1-1[
+.kol-1-2.center[
+.width-45[[![SM_mug](figures/SM_mug.jpg)](https://twitter.com/HEPfeickert/status/1269406145858469891?s=20)]
+]
+.kol-1-2.center[
+.kol-1-2.center[
+.width-100[[![ParticleZoo_Higgs](figures/ParticleZoo_Higgs.jpg)](https://twitter.com/HEPfeickert/status/1269406145858469891?s=20)]
+]
+.kol-1-2.center[
+.width-85[[![ParticleZoo_DarkMatter](figures/ParticleZoo_DarkMatter.jpg)](https://twitter.com/HEPfeickert/status/1269406145858469891?s=20)]
+]
+]
+]
+
+---
+# Goals of physics analysis at the LHC
+
+.kol-1-1[
+.kol-1-3.center[
+.width-100[[![ATLAS_Higgs_discovery](figures/ATLAS_Higgs_discovery.png)](https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/HIGG-2012-27/)]
+Search for new physics
+]
+.kol-1-3.center[
+<br>
+.width-100[[![CMS-PAS-HIG-19-004](figures/CMS-PAS-HIG-19-004.png)](http://cms-results.web.cern.ch/cms-results/public-results/superseded/HIG-19-004/index.html)]
+
+<br>
+Make precision measurements
+]
+.kol-1-3.center[
+.width-110[[![SUSY-2018-31_limit](figures/SUSY-2018-31_limit.png)](https://atlas.web.cern.ch/Atlas/GROUPS/PHYSICS/PAPERS/SUSY-2018-31/)]
+
+Provide constraints on models through setting best limits
+]
+]
+
+- All require .bold[building statistical models] and .bold[fitting models] to data to perform statistical inference
+- Model complexity can be huge for complicated searches
+- **Problem:** Time to fit can be .bold[many hours]
+- .blue[Goal:] Empower analysts with fast fits and expressive models
+---
 # Fitting as a Service with `pyhf` on HPCs
 
 .kol-1-2[
