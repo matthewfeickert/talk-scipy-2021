@@ -103,6 +103,32 @@ Provide constraints on models through setting best limits
 - Model complexity can be huge for complicated searches
 - **Problem:** Time to fit can be .bold[many hours]
 - .blue[Goal:] Empower analysts with fast fits and expressive models
+
+---
+# Introduce pyhf
+
+.kol-1-2[
+.center.width-50[[![pyhf-logo](https://raw.githubusercontent.com/scikit-hep/pyhf/master/docs/_static/img/pyhf-logo-small.png)](https://pyhf.readthedocs.io/)]
+- Pure Python implementation of the `HistFactory` statistical specification for multi-bin histogram-based analysis
+- Supports multiple computational backends and optimizers (defaults of NumPy and SciPy)
+- JAX, TensorFlow, and PyTorch backends can leverage _hardware acceleration_ (GPUs, TPUs) and _automatic differentiation_
+- Possible to outperform C++ implementations of `HistFactory`
+]
+.kol-1-2[
+- Explain what it is
+]
+
+---
+# (Fitting) Functions as a Service
+
+- Explain what it is and how it works
+
+---
+# Cloud vs. Cluster (Paying for Priority)
+
+- Cloud service providers give an excellent FaaS platform that can scale elastically
+- SHOW FITTING with GCP example GIF
+
 ---
 # Fitting as a Service with `pyhf` on HPCs
 
