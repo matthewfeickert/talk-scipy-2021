@@ -15,7 +15,7 @@ count: false
 July 15th, 2021
 
 ---
-# Authors
+# Core devs and team
 
 <br><br>
 
@@ -109,13 +109,18 @@ Provide constraints on models through setting best limits
 
 .kol-1-2[
 .center.width-50[[![pyhf-logo](https://raw.githubusercontent.com/scikit-hep/pyhf/master/docs/_static/img/pyhf-logo-small.png)](https://pyhf.readthedocs.io/)]
-- Pure Python implementation of the `HistFactory` statistical specification for multi-bin histogram-based analysis
-- Supports multiple computational backends and optimizers (defaults of NumPy and SciPy)
+- Pure Python implementation of ubiquitous high energy physics statistical model specification for multi-bin histogram-based analysis
+- Supports .bold[multiple computational backends] and optimizers (defaults of NumPy and SciPy)
 - JAX, TensorFlow, and PyTorch backends can leverage _hardware acceleration_ (GPUs, TPUs) and _automatic differentiation_
-- Possible to outperform C++ implementations of `HistFactory`
+- Possible to outperform traditional C++ implementations that are default in HEP
 ]
-.kol-1-2[
-- Explain what it is
+.kol-1-4.center[
+.width-85[![NumPy](figures/logos/NumPy_logo.svg)]
+.width-85[![PyTorch](figures/logos/Pytorch_logo.svg)]
+.width-85[![Tensorflow](figures/logos/TensorFlow_logo.svg)]
+
+<br>
+.width-50[![JAX](figures/logos/JAX_logo.png)]
 ]
 
 ---
@@ -124,10 +129,22 @@ Provide constraints on models through setting best limits
 - Explain what it is and how it works
 
 ---
-# Cloud vs. Cluster (Paying for Priority)
+# FaaS Natural Habitat: Cloud Services
 
+.kol-1-3[
 - Cloud service providers give an excellent FaaS platform that can scale elastically
-- SHOW FITTING with GCP example GIF
+- Example: Running across 25 worker nodes on Google Cloud Platform
+   - Results being plotted as they are streamed back
+   - Fit of all signal model hypothesis in analysis takes .bold[3 minutes]!
+- Powerful resource, but in (academic) sciences experience is still growing
+- "Pay for priority" model &mdash; requires funding
+]
+.kol-2-3[
+<!-- https://github.com/lukasheinrich/lhoodbinder2 -->
+<!-- .center.width-45[[![plot_countour](figures/plot_countour.gif)](http://www.cern.ch/feickert/talks/plot_countour.gif)] -->
+.center.width-70[[![plot_countour](http://www.cern.ch/feickert/talks/plot_countour.gif)](http://www.cern.ch/feickert/talks/plot_countour.gif)]
+.center.small[(GIF sped up by 8x)]
+]
 
 ---
 # Fitting as a Service with `pyhf` on HPCs
