@@ -105,14 +105,26 @@ Provide constraints on models through setting best limits
 - .blue[Goal:] Empower analysts with fast fits and expressive models
 
 ---
-# Introduce pyhf
+# pyhf: pure-Python HistFactory statistical models
 
-.kol-1-2[
-.center.width-50[[![pyhf-logo](https://raw.githubusercontent.com/scikit-hep/pyhf/master/docs/_static/img/pyhf-logo-small.png)](https://pyhf.readthedocs.io/)]
+.kol-3-4[
+<!-- .center.width-50[[![pyhf-logo](https://raw.githubusercontent.com/scikit-hep/pyhf/master/docs/_static/img/pyhf-logo-small.png)](https://pyhf.readthedocs.io/)] -->
 - Pure Python implementation of ubiquitous high energy physics statistical model specification for multi-bin histogram-based analysis
 - Supports .bold[multiple computational backends] and optimizers (defaults of NumPy and SciPy)
 - JAX, TensorFlow, and PyTorch backends can leverage _hardware acceleration_ (GPUs, TPUs) and _automatic differentiation_
 - Possible to outperform traditional C++ implementations that are default in HEP
+- Ways to learn more:
+
+.kol-1-3.center[
+.width-100[[![SciPy 2020](figures/tutorial_screenshot.png)](https://pyhf.github.io/pyhf-tutorial/)]
+]
+.kol-1-3.center[
+.width-100[[![JOSS paper](figures/JOSS_paper.png)](https://doi.org/10.21105/joss.02823)]
+[![DOI](https://joss.theoj.org/papers/10.21105/joss.02823/status.svg)](https://doi.org/10.21105/joss.02823)
+]
+.kol-1-3.center[
+.width-100[[![SciPy 2020](https://i3.ytimg.com/vi/FrH9s3eB6fU/maxresdefault.jpg)](https://youtu.be/FrH9s3eB6fU)]
+]
 ]
 .kol-1-4.center[
 .width-85[![NumPy](figures/logos/NumPy_logo.svg)]
