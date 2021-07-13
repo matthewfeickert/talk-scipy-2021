@@ -136,7 +136,7 @@ Provide constraints on models through setting best limits
 ]
 
 ---
-# (Fitting) Functions as a Service
+# Functions as a Service
 
 - Explain what it is and how it works
 
@@ -159,7 +159,7 @@ Provide constraints on models through setting best limits
 ]
 
 ---
-# Fitting as a Service with `pyhf` on HPCs
+# (Fitting) FaaS with `pyhf` on HPCs
 
 .kol-1-2[
 - HPC facilities provide an opportunity to efficiently perform the statistical inference of LHC data
@@ -181,18 +181,15 @@ Provide constraints on models through setting best limits
 # Fitting as a Service Methods and Technologies
 
 .kol-1-2[
-.center.width-50[[![pyhf-logo](https://raw.githubusercontent.com/scikit-hep/pyhf/master/docs/_static/img/pyhf-logo-small.png)](https://pyhf.readthedocs.io/)]
-- Pure Python implementation of the `HistFactory` statistical specification for multi-bin histogram-based analysis
-- Supports multiple computational backends and optimizers (defaults of NumPy and SciPy)
-- JAX, TensorFlow, and PyTorch backends can leverage _hardware acceleration_ (GPUs, TPUs) and _automatic differentiation_
-- Possible to outperform C++ implementations of `HistFactory`
-]
-.kol-1-2[
-.center.width-80[[![funcX-light](figures/funcX-light.png)](https://funcx.readthedocs.io/en/latest/)]
 - High-performance FaaS platform
 - Designed to orchestrate _scientific workloads_ across _heterogeneous computing resources_ (clusters, clouds, and supercomputers) and task execution providers (HTCondor, Slurm, Torque, and Kubernetes)
 - Leverages [Parsl](https://parsl.readthedocs.io/) for efficient parallelism and managing concurrent task execution
 - Allows users to register and then execute Python functions in "serverless supercomputing" workflow
+- One tool of multiple in a growing ecosystem of distributed computing
+   - Currently looking into Dask-distributed as well
+]
+.kol-1-2[
+.center.width-80[[![funcX-light](figures/funcX-light.png)](https://funcx.readthedocs.io/en/latest/)]
 ]
 
 ---
