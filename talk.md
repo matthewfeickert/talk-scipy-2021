@@ -15,7 +15,7 @@ count: false
 July 15th, 2021
 
 ---
-# Core devs and team
+# Project Team
 
 <br><br>
 
@@ -51,6 +51,9 @@ National Center for<br>
 Supercomputing Applications/Illinois
 ]
 ]
+
+.kol-3-4.center.bold[`pyhf` Core Developers]
+.kol-1-4.center.bold.gray[`funcX` Developer]
 
 ---
 # We're high energy particle physicists
