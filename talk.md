@@ -604,15 +604,19 @@ feickert@ThinkPad-X1:~$ jq .C1N2_Wh_hbb_1000_0.result.cls_obs results.json
 ] -->
 
 ---
-# Constraints and Trade-offs
+# FasS constraints and trade-offs
 
 .kol-2-5[
 - The nature of FaaS that makes it highly scalable also leads to a problem for taking advantage of just-in-time (JIT) compiled functions
+   - Super helpful for performing
 - To leverage JITed functions there needs to be .bold[memory that is preserved across invocations] of that function
 - Nature of FaaS: Each function call is self contained and .bold[doesn't know about global state]
    - funcX endpoint listens on a queue and invokes functions
+- Still need to know and tune funcX config to specifics of endpoint resource
+   - No magic bullet when using HPC center batch systems
 ]
 .kol-3-5[
+<br>
 .tiny[
 ```ipython
 In [1]: import jax.numpy as jnp
@@ -635,11 +639,6 @@ In [6]: %timeit selu_jit(x)
 ```
 ]
 .center[50X speedup from JIT]
-]
-.kol-1-1[
-- Thoughts for future: Is it possible to create setup and tear down functionality to improve parallelized fitting?
-   - Setup: Send function(s) to JIT and keep them in state
-   - Tear down: Once jobs are finished clean up state
 ]
 
 ---
