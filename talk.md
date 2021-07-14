@@ -182,11 +182,6 @@ Provide constraints on models through setting best limits
 ]
 
 ---
-# View of fitting FaaS Analysis Facility Blueprint
-
-.center.width-100[![infrastructure_perspective](figures/infrastructure_perspective.png)]
-
----
 # funcX: high-performance FaaS platform
 
 .center.width-30[[![funcX-light](figures/funcX-light.png)](https://funcx.readthedocs.io/)]
