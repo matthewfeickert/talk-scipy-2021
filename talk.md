@@ -179,19 +179,26 @@ Provide constraints on models through setting best limits
 ]
 
 ---
-# Fitting as a Service Methods and Technologies
+# View of fitting FaaS Analysis Facility Blueprint
+
+.center.width-100[![infrastructure_perspective](figures/infrastructure_perspective.png)]
+
+---
+# funcX: high-performance FaaS platform
+
+.center.width-30[[![funcX-light](figures/funcX-light.png)](https://funcx.readthedocs.io/)]
 
 .kol-1-2[
-- [funcX](https://funcx.readthedocs.io/)
-- High-performance FaaS platform
-- Designed to orchestrate _scientific workloads_ across _heterogeneous computing resources_ (clusters, clouds, and supercomputers) and task execution providers (HTCondor, Slurm, Torque, and Kubernetes)
+- Designed to orchestrate .bold[scientific workloads] across .bold[heterogeneous computing resources] (clusters, clouds, and supercomputers) and task execution providers (HTCondor, Slurm, Torque, and Kubernetes)
 - Leverages [Parsl](https://parsl.readthedocs.io/) for efficient parallelism and managing concurrent task execution
-- Allows users to register and then execute Python functions in "serverless supercomputing" workflow
-- One tool of multiple in a growing ecosystem of distributed computing
-   - Currently looking into Dask-distributed as well
+- Allows users to .bold[register] and then .bold[execute] Python functions in "serverless supercomputing" workflow
 ]
 .kol-1-2[
-.center.width-80[[![funcX-light](figures/funcX-light.png)](https://funcx.readthedocs.io/en/latest/)]
+- `funcX` SDK provides a Python API to `funcX` service
+- Controlling "endpoint" and submission machine can be .bold[totally seperate] (communications routed through [Globus](https://www.globus.org/))
+   - Allows for "fire and forget" remote execution where you can run on your laptop, close it, and then retrieve output later
+- Tool in a growing ecosystem of distributed computing
+   - Currently looking into other tools like [`Dask.distributed`](https://distributed.dask.org/) and [`Dask-Jobqueue`](https://jobqueue.dask.org/) as well
 ]
 
 ---
@@ -461,11 +468,11 @@ def main(args):
 - .bold[Example]: Fitting all 125 models from `pyhf` pallet for [published ATLAS SUSY 1Lbb analysis](https://www.hepdata.net/record/ins1755298)
    - DOI: https://doi.org/10.17182/hepdata.90607
 - Wall time .bold[under 2 minutes 30 seconds]
-   - Downloading of `pyhf` pallet from HEPData (local machine)
-   - Registering functions (local machine)
+   - Downloading of `pyhf` pallet from HEPData (submit machine)
+   - Registering functions (submit machine)
    - Sending serialization to funcX endpoint (remote HPC)
    - funcX executing all jobs (remote HPC)
-   - funcX retrieving finished job output (local machine)
+   - funcX retrieving finished job output (submit machine)
 - Deployments of funcX endpoints currently used for testing
    - University of Chicago River HPC cluster (CPU)
    - NCSA Bluewaters (CPU)
@@ -675,11 +682,6 @@ class: end-slide, center
 - [Testing has shown](https://parsl.readthedocs.io/en/stable/userguide/performance.html) that Dask struggles to .bold[scale up to thousands of nodes], whereas the funcX High Throughput Executor (HTEX) provided through [Parsl](https://parsl.readthedocs.io/) scales efficiently
 
 [.center.width-80[![Scaling Comparison](https://parsl.readthedocs.io/en/stable/_images/strong-scaling.png)]](https://parsl.readthedocs.io/en/stable/userguide/performance.html)
-
----
-# View of fitting FaaS Analysis Facility Blueprint
-
-.center.width-100[![infrastructure_perspective](figures/infrastructure_perspective.png)]
 
 ---
 # References
