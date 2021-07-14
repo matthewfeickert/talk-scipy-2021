@@ -682,7 +682,7 @@ In [6]: %timeit selu_jit(x)
    - `pyhf` ([GitHub](https://github.com/scikit-hep/pyhf))
    - funcX ([GitHub](https://github.com/funcx-faas/funcX))
    - Parsl ([GitHub](https://github.com/Parsl/parsl))
-   - Code for studies shown ([GitHub](https://github.com/matthewfeickert/distributed-inference-with-pyhf-and-funcX))
+   - Code for examples shown ([GitHub](https://github.com/matthewfeickert/talk-scipy-2021))
 
 ---
 class: middle
