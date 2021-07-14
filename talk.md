@@ -146,7 +146,7 @@ Provide constraints on models through setting best limits
 - Cloud service providers give an excellent Functions as a Service (FaaS) platform that can scale elastically
 - Example: Running `pyhf` across 25 worker nodes on Google Cloud Platform
    - Results being plotted as they are streamed back
-   - Fit of all signal model hypothesis in analysis takes .bold[3 minutes]!
+   - Fit of all signal model hypotheses in analysis takes .bold[3 minutes]!
 - Powerful resource, but in (academic) sciences experience is still growing
 - "Pay for priority" model
    - fast and reliable
