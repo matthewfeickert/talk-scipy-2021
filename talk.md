@@ -2,8 +2,9 @@ class: middle, center, title-slide
 count: false
 
 # Distributed statistical inference
-# with pyhf powered funcX
+# with `pyhf` powered by `funcX`
 
+<br>
 .huge.blue[Matthew Feickert]<br>
 
 <!-- Provided by fontawesome under the Creative Commons Attribution 4.0 International license https://fontawesome.com/license -->
@@ -11,7 +12,9 @@ count: false
 .width-02[![Twitter](figures/twitter.svg)] [@HEPfeickert](https://twitter.com/HEPfeickert)<br>
 .width-02[![GitHub](figures/github.svg)] [matthewfeickert](https://github.com/matthewfeickert)
 
-[SciPy 2021](https://youtu.be/FrH9s3eB6fU)<br>
+<br>
+Physics and Astronomy Mini-symposia<br>
+[SciPy 2021](https://www.scipy2021.scipy.org/)<br>
 July 15th, 2021
 
 ---
@@ -655,6 +658,30 @@ In [6]: %timeit selu_jit(x)
    - funcX ([GitHub](https://github.com/funcx-faas/funcX))
    - Parsl ([GitHub](https://github.com/Parsl/parsl))
    - Code for studies shown ([GitHub](https://github.com/matthewfeickert/distributed-inference-with-pyhf-and-funcX))
+
+---
+class: middle
+
+.center[
+# Thanks for listening!
+# Come talk with us!
+
+.large[[www.scikit-hep.org/pyhf](https://scikit-hep.org/pyhf/)]
+]
+.grid[
+.kol-1-3.center[
+.width-90[[![scikit-hep_logo](https://scikit-hep.org/assets/images/logo.png)](https://scikit-hep.org/)]
+]
+.kol-1-3.center[
+<br>
+.width-90[[![pyhf_logo](https://iris-hep.org/assets/logos/pyhf-logo.png)](https://github.com/scikit-hep/pyhf)]
+]
+.kol-1-3.center[
+<br>
+<br>
+.width-100[[![iris-hep_logo](figures/iris-hep-4-no-long-name.png)](https://iris-hep.org/)]
+]
+]
 
 ---
 class: end-slide, center
