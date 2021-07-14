@@ -202,7 +202,7 @@ Provide constraints on models through setting best limits
 ]
 
 ---
-# funcX Endpoints on HPC
+# funcX endpoints on HPC
 
 .kol-2-5[
 <br>
@@ -253,7 +253,7 @@ config = Config(
 ]
 
 ---
-# funcX Endpoints on HPC: Config Example
+# funcX endpoints on HPC: Config Example
 
 .kol-1-2[
 Example Parsl `HighThroughputExecutor` config (from [Parsl docs](https://parsl.readthedocs.io/en/1.1.0/userguide/execution.html#configuration)) that .bold[funcX extends]
@@ -328,10 +328,10 @@ def infer_hypotest(workspace, metadata, patches, backend):
     test_poi = 1.0
     return {
         "metadata": metadata,
-        "CLs_obs": float(
+        "cls_obs": float(
             pyhf.infer.hypotest(test_poi, data, model, test_stat="qtilde")
         ),
-        "Fit-Time": time.time() - tick,
+        "fit-time": time.time() - tick,
     }
 
 ...
@@ -462,7 +462,7 @@ def main(args):
 ]
 
 ---
-# Scaling of Statistical Inference
+# Scaling of statistical inference
 
 .kol-1-2[
 - .bold[Example]: Fitting all 125 models from `pyhf` pallet for [published ATLAS SUSY 1Lbb analysis](https://www.hepdata.net/record/ins1755298)
@@ -516,7 +516,7 @@ sys	 0m1.561s
 ]
 
 ---
-# Scaling of Statistical Inference: Results
+# Scaling of statistical inference: Results
 
 .kol-1-2[
 - Remember, the returned output is just the .bold[function's return]
@@ -536,12 +536,12 @@ def infer_hypotest(workspace, metadata, patches, backend):
     test_poi = 1.0
     return {
         "metadata": metadata,
-        "CLs_obs": float(
+        "cls_obs": float(
             pyhf.infer.hypotest(
                 test_poi, data, model, test_stat="qtilde"
                 )
         ),
-        "Fit-Time": time.time() - tick,
+        "fit-time": time.time() - tick,
     }
 ```
 ]
@@ -553,9 +553,9 @@ def infer_hypotest(workspace, metadata, patches, backend):
 
 .tiny[
 ```
-feickert@ThinkPad-X1:~$ python fit_analysis.py -c config/1Lbb.json > run.log
-# Some light file manipulation later to extract results.json from run.log
-feickert@ThinkPad-X1:~$ jq .C1N2_Wh_hbb_1000_0 results.json
+feickert@ThinkPad-X1:~$ python fit_analysis.py -c config/1Lbb.json
+# Returned results saved in results.json
+feickert@ThinkPad-X1:~$ jq .C1N2_Wh_hbb_1000_0.result results.json
 ```
 ```json
 {
@@ -566,12 +566,13 @@ feickert@ThinkPad-X1:~$ jq .C1N2_Wh_hbb_1000_0 results.json
       0
     ]
   },
-  "CLs_obs": 0.5856783708143126,
-  "Fit-Time": 28.786057233810425
+  "cls_obs": 0.5856783708143126,
+  "fit-time": 24.032342672348022
 }
+
 ```
 ```
-feickert@ThinkPad-X1:~$ jq .C1N2_Wh_hbb_1000_0.CLs_obs results.json
+feickert@ThinkPad-X1:~$ jq .C1N2_Wh_hbb_1000_0.result.cls_obs results.json
 0.5856783708143126
 ```
 ]
