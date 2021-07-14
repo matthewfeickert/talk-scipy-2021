@@ -514,6 +514,31 @@ sys	 0m1.561s
 ]
 
 ---
+# Scaling of statistical inference
+
+.kol-1-2[
+- .bold[Example]: Fitting all 125 models from `pyhf` pallet for [published ATLAS SUSY 1Lbb analysis](https://www.hepdata.net/record/ins1755298)
+   - DOI: https://doi.org/10.17182/hepdata.90607
+- Wall time .bold[under 2 minutes 30 seconds]
+   - Downloading of `pyhf` pallet from HEPData (submit machine)
+   - Registering functions (submit machine)
+   - Sending serialization to funcX endpoint (remote HPC)
+   - funcX executing all jobs (remote HPC)
+   - funcX retrieving finished job output (submit machine)
+- Deployments of funcX endpoints currently used for testing
+   - University of Chicago River HPC cluster (CPU)
+   - NCSA Bluewaters (CPU)
+   - XSEDE Expanse (GPU JAX)
+]
+.kol-1-2.center[
+
+<br>
+<!-- .center.width-120[[![asciinema](https://asciinema.org/a/jwpnuHyseJglHcws2Dvs0SW8H.png)](https://asciinema.org/a/jwpnuHyseJglHcws2Dvs0SW8H?autoplay=1)] -->
+.center.width-120[[![asciinema](figures/asciinema_river.png)](https://asciinema.org/a/jwpnuHyseJglHcws2Dvs0SW8H?autoplay=1)]
+.center.bold[Click me to watch an asciinema!]
+]
+
+---
 # Scaling of statistical inference: Results
 
 .kol-1-2[
