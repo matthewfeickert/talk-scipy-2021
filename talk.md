@@ -15,7 +15,7 @@ count: false
 July 15th, 2021
 
 ---
-# Project Team
+# Project team
 
 <br><br>
 
@@ -105,14 +105,14 @@ Provide constraints on models through setting best limits
 - All require .bold[building statistical models] and .bold[fitting models] to data to perform statistical inference
 - Model complexity can be huge for complicated searches
 - **Problem:** Time to fit can be .bold[many hours]
-- .blue[Goal:] Empower analysts with fast fits and expressive models
+- .blue[`pyhf` Goal:] Empower analysts with fast fits and expressive models
 
 ---
 # pyhf: pure-Python HistFactory statistical models
 
 .kol-3-4[
 <!-- .center.width-50[[![pyhf-logo](https://raw.githubusercontent.com/scikit-hep/pyhf/master/docs/_static/img/pyhf-logo-small.png)](https://pyhf.readthedocs.io/)] -->
-- Pure Python implementation of ubiquitous high energy physics statistical model specification for multi-bin histogram-based analysis
+- Pure Python implementation of ubiquitous high energy physics (HEP) statistical model specification for multi-bin histogram-based analysis
 - Supports .bold[multiple computational backends] and optimizers (defaults of NumPy and SciPy)
 - JAX, TensorFlow, and PyTorch backends can leverage _hardware acceleration_ (GPUs, TPUs) and _automatic differentiation_
 - Possible to outperform traditional C++ implementations that are default in HEP
@@ -139,20 +139,18 @@ Provide constraints on models through setting best limits
 ]
 
 ---
-# Functions as a Service
-
-- Explain what it is and how it works
-
----
-# FaaS Natural Habitat: Cloud Services
+# Functions as a Service natural habitat: Cloud
 
 .kol-1-3[
-- Cloud service providers give an excellent FaaS platform that can scale elastically
-- Example: Running across 25 worker nodes on Google Cloud Platform
+<!-- - `pyhf` is well suited for distributed computing to speedup the final stages of analysis -->
+- Cloud service providers give an excellent Functions as a Service (FaaS) platform that can scale elastically
+- Example: Running `pyhf` across 25 worker nodes on Google Cloud Platform
    - Results being plotted as they are streamed back
    - Fit of all signal model hypothesis in analysis takes .bold[3 minutes]!
 - Powerful resource, but in (academic) sciences experience is still growing
-- "Pay for priority" model &mdash; requires funding
+- "Pay for priority" model
+   - fast and reliable
+   - requires funding even with nice support from cloud providers
 ]
 .kol-2-3[
 <!-- https://github.com/lukasheinrich/lhoodbinder2 -->
@@ -165,25 +163,26 @@ Provide constraints on models through setting best limits
 # (Fitting) FaaS with `pyhf` on HPCs
 
 .kol-1-2[
-- HPC facilities provide an opportunity to efficiently perform the statistical inference of LHC data
+- HPC facilities are more .bold[commonly available] for use in HEP and provide an opportunity to .bold[efficiently perform statistical inference] of LHC data
 - Can pose problems with orchestration and efficient scheduling
-- Want to leverage pyhf hardware accelerated backends at HPC sites for real analysis speedup
+- Want to leverage `pyhf` hardware accelerated backends at HPC sites for real analysis speedup
    - Reduce fitting time from hours to minutes
-- Deploy a .bold[(fitting) Function as a Service] (FaaS) powered through [funcX](https://funcx.readthedocs.io/en/latest/)
+- Deploy a .bold[(fitting) Function as a Service] to HPC centers
 - Example use cases:
    - Large scale ensemble fits for statistical combinations
-   - Large dimensional scans of theory parameter space (e.g. pMSSM scans)
+   - Large dimensional scans of theory parameter space (e.g. Phenomenological Minimal Supersymmetric Standard Model scans)
    - Pseudo-experiment generation ("toys")
 ]
 .kol-1-2[
  .center.width-90[![carbon_pyhf_HVTWZ_3500_fit](figures/carbon_pyhf_HVTWZ_3500_fit.png)]
- ATLAS workspace that takes over an hour on ROOT fit in under 1 minute with pyhf on local GPU
+ Model that takes over an hour with traditional C++ framework fit in under 1 minute with pyhf on local GPU
 ]
 
 ---
 # Fitting as a Service Methods and Technologies
 
 .kol-1-2[
+- [funcX](https://funcx.readthedocs.io/)
 - High-performance FaaS platform
 - Designed to orchestrate _scientific workloads_ across _heterogeneous computing resources_ (clusters, clouds, and supercomputers) and task execution providers (HTCondor, Slurm, Torque, and Kubernetes)
 - Leverages [Parsl](https://parsl.readthedocs.io/) for efficient parallelism and managing concurrent task execution
