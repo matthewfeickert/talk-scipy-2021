@@ -46,7 +46,7 @@ Urbana-Champaign
 UCSC SCIPP
 ]
 .kol-1-4.center[
-.circle.width-75[![Ben](https://avatars2.githubusercontent.com/u/8229875)]
+.circle.width-75[![Ben](figures/collaborators/bengalewsky.jpg)]
 
 [Ben Galewsky](https://bengalewsky.github.io/about/)
 
