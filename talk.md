@@ -608,7 +608,7 @@ feickert@ThinkPad-X1:~$ jq .C1N2_Wh_hbb_1000_0.result.cls_obs results.json
 
 .kol-2-5[
 - The nature of FaaS that makes it highly scalable also leads to a problem for taking advantage of just-in-time (JIT) compiled functions
-   - Super helpful for performing
+   - JIT is super helpful for performing pseudo-experiment generation
 - To leverage JITed functions there needs to be .bold[memory that is preserved across invocations] of that function
 - Nature of FaaS: Each function call is self contained and .bold[doesn't know about global state]
    - funcX endpoint listens on a queue and invokes functions
