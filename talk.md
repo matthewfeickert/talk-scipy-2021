@@ -537,9 +537,9 @@ sys	 0m1.561s
 ]
 .kol-1-2.center[
 
-<br>
-<!-- .center.width-120[[![asciinema](https://asciinema.org/a/jwpnuHyseJglHcws2Dvs0SW8H.png)](https://asciinema.org/a/jwpnuHyseJglHcws2Dvs0SW8H?autoplay=1)] -->
-.center.width-120[[![asciinema](figures/asciinema_river.png)](https://asciinema.org/a/jwpnuHyseJglHcws2Dvs0SW8H?autoplay=1)]
+<br><br>
+<!-- .center.width-115[[![asciinema](https://asciinema.org/a/425477.png)](https://asciinema.org/a/425477?autoplay=1)] -->
+.center.width-115[[![asciinema](figures/asciinema_river.png)](https://asciinema.org/a/425477?autoplay=1)]
 .center.bold[Click me to watch an asciinema!]
 ]
 
