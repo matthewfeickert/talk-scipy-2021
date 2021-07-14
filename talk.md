@@ -578,7 +578,7 @@ feickert@ThinkPad-X1:~$ jq .C1N2_Wh_hbb_1000_0.result.cls_obs results.json
 ]
 ]
 
----
+<!-- ---
 # Performance
 
 .kol-1-2[
@@ -589,10 +589,10 @@ feickert@ThinkPad-X1:~$ jq .C1N2_Wh_hbb_1000_0.result.cls_obs results.json
 ]
 .kol-1-2[
 .center.width-100[![linear](figures/timing_barplot_river.png)]
-]
+] -->
 
 <!-- Table is not made by hand. It is the copied output of `python scripts/build_table.py` -->
-
+<!--
 .large[
 
 | Analysis                       |   Patches |    |   Nodes per block |    |   Max blocks |    | Wall time (sec)   |    |   Single node (sec) |
@@ -601,7 +601,7 @@ feickert@ThinkPad-X1:~$ jq .C1N2_Wh_hbb_1000_0.result.cls_obs results.json
 | JHEP 06 (2020) 46              |        76 |    |                 1 |    |            4 |    | $31.2\pm2.7$      |    |                 114 |
 | Phys. Rev. D 101 (2020) 032009 |        57 |    |                 1 |    |            4 |    | $57.4\pm5.2$      |    |                 612 |
 
-]
+] -->
 
 ---
 # Constraints and Trade-offs
@@ -661,17 +661,6 @@ In [6]: %timeit selu_jit(x)
 class: end-slide, center
 
 .large[Backup]
-
----
-# Specifics of ROOT comparisons
-
-<br>
-- "Thing X outperforms ROOT" isn't specific enough to be very helpful
-- All claims about performance against ROOT:
-   - Made on ROOT `v6.22.02` or earlier
-   - Made given HistFactory models (not against `WSMaker` or something similar)
-- Still need to be tested against the recent ROOT `v6.24.00` release
-- For a fitting service like what is being done with funcX fair comparisons are extremely difficult to create, and so aren't reported directly here
 
 ---
 # Why use funcX as opposed to Dask?
