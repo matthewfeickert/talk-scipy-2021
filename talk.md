@@ -182,11 +182,6 @@ Provide constraints on models through setting best limits
 ]
 
 ---
-# View of fitting FaaS Analysis Facility Blueprint
-
-.center.width-100[![infrastructure_perspective](figures/infrastructure_perspective.png)]
-
----
 # funcX: high-performance FaaS platform
 
 .center.width-30[[![funcX-light](figures/funcX-light.png)](https://funcx.readthedocs.io/)]
@@ -262,49 +257,6 @@ config = Config(
 )
 ```
 ]
-]
-
----
-# funcX endpoints on HPC: Config Example
-
-.kol-1-2[
-Example Parsl `HighThroughputExecutor` config (from [Parsl docs](https://parsl.readthedocs.io/en/1.1.0/userguide/execution.html#configuration)) that .bold[funcX extends]
-
-.tiny[
-```python
-from parsl.config import Config
-from libsubmit.providers.local.local import Local
-from parsl.executors import HighThroughputExecutor
-
-config = Config(
-    executors=[
-        HighThroughputExecutor(
-            label='local_htex',
-            workers_per_node=2,
-            provider=Local(
-                min_blocks=1,
-                init_blocks=1,
-                max_blocks=2,
-                nodes_per_block=1,
-                parallelism=0.5
-            )
-        )
-    ]
-)
-```
-]
-.tiny[
-- [block](https://parsl.readthedocs.io/en/1.1.0/userguide/execution.html#blocks): Basic unit of resources acquired from a provider
-- [`max_blocks`](https://parsl.readthedocs.io/en/1.1.0/userguide/execution.html#elasticity): Maximum number of blocks that can be active per executor
-- [`nodes_per_block`](https://parsl.readthedocs.io/en/1.1.0/userguide/execution.html#blocks): Number of nodes requested per block
-- [`parallelism`](https://parsl.readthedocs.io/en/1.1.0/userguide/execution.html#parallelism): Ratio of task execution capacity to the sum of running tasks and available tasks
-]
-]
-.kol-1-2[
-.center.width-100[[![parsl_parallelism](figures/parsl_parallelism.gif)](https://parsl.readthedocs.io/en/1.1.0/userguide/execution.html#configuration)]
-- 9 tasks to compute
-- Tasks are allocated to the first block until its `task_capacity` (here 4 tasks) reached
-- Task 5: First block full and <br>`5/9 > parallelism`<br>so Parsl provisions a new block for executing the remaining tasks
 ]
 
 ---
@@ -702,6 +654,54 @@ class: middle
 class: end-slide, center
 
 .large[Backup]
+
+---
+# funcX endpoints on HPC: Config Example
+
+.kol-1-2[
+Example Parsl `HighThroughputExecutor` config (from [Parsl docs](https://parsl.readthedocs.io/en/1.1.0/userguide/execution.html#configuration)) that .bold[funcX extends]
+
+.tiny[
+```python
+from parsl.config import Config
+from libsubmit.providers.local.local import Local
+from parsl.executors import HighThroughputExecutor
+
+config = Config(
+    executors=[
+        HighThroughputExecutor(
+            label='local_htex',
+            workers_per_node=2,
+            provider=Local(
+                min_blocks=1,
+                init_blocks=1,
+                max_blocks=2,
+                nodes_per_block=1,
+                parallelism=0.5
+            )
+        )
+    ]
+)
+```
+]
+.tiny[
+- [block](https://parsl.readthedocs.io/en/1.1.0/userguide/execution.html#blocks): Basic unit of resources acquired from a provider
+- [`max_blocks`](https://parsl.readthedocs.io/en/1.1.0/userguide/execution.html#elasticity): Maximum number of blocks that can be active per executor
+- [`nodes_per_block`](https://parsl.readthedocs.io/en/1.1.0/userguide/execution.html#blocks): Number of nodes requested per block
+- [`parallelism`](https://parsl.readthedocs.io/en/1.1.0/userguide/execution.html#parallelism): Ratio of task execution capacity to the sum of running tasks and available tasks
+]
+]
+.kol-1-2[
+.center.width-100[[![parsl_parallelism](figures/parsl_parallelism.gif)](https://parsl.readthedocs.io/en/1.1.0/userguide/execution.html#configuration)]
+- 9 tasks to compute
+- Tasks are allocated to the first block until its `task_capacity` (here 4 tasks) reached
+- Task 5: First block full and <br>`5/9 > parallelism`<br>so Parsl provisions a new block for executing the remaining tasks
+]
+
+---
+# View of fitting FaaS Analysis Facility Blueprint
+
+.center.width-100[![infrastructure_perspective](figures/infrastructure_perspective.png)]
 
 ---
 # Why look at funcX when Dask is so established?
