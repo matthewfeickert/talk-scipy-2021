@@ -302,7 +302,7 @@ config = Config(
 # funcX endpoints deployment
 
 - Deployment of `funcX` endpoints is straightforward
-- Example: Deployment to University of Chicago's RIVER cluster
+- Example: Deployment to University of Chicago's RIVER cluster with Kubernetes
 
 <br>
 .center.width-100[![carbon_endpoint_startup](figures/carbon_endpoint_startup.png)]
