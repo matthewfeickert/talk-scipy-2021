@@ -615,31 +615,6 @@ feickert@ThinkPad-X1:~$ jq .C1N2_Wh_hbb_1000_0.result.cls_obs results.json
 ]
 ]
 
-<!-- ---
-# Performance
-
-.kol-1-2[
-- Fit times for analyses using `pyhf`'s NumPy backend and SciPy optimizer orchestrated with funcX on River HPC cluster (CPU) over 10 trials compared to a single RIVER node
-- Reported wall fit time is the mean wall fit time of the trials
-   - Uncertainty on the mean wall time corresponds to the standard deviation of the wall fit times
-- Given the variability in resources available on real clusters, funcX config options governing resources requested (.bold[nodes per block] and .bold[max blocks]) offer most useful worker comparison metrics
-]
-.kol-1-2[
-.center.width-100[![linear](figures/timing_barplot_river.png)]
-] -->
-
-<!-- Table is not made by hand. It is the copied output of `python scripts/build_table.py` -->
-<!--
-.large[
-
-| Analysis                       |   Patches |    |   Nodes per block |    |   Max blocks |    | Wall time (sec)   |    |   Single node (sec) |
-|:-------------------------------|----------:|:---|------------------:|:---|-------------:|:---|:------------------|:---|--------------------:|
-| Eur. Phys. J. C 80 (2020) 691  |       125 |    |                 1 |    |            4 |    | $156.2\pm9.5$     |    |                3842 |
-| JHEP 06 (2020) 46              |        76 |    |                 1 |    |            4 |    | $31.2\pm2.7$      |    |                 114 |
-| Phys. Rev. D 101 (2020) 032009 |        57 |    |                 1 |    |            4 |    | $57.4\pm5.2$      |    |                 612 |
-
-] -->
-
 ---
 # FasS constraints and trade-offs
 
