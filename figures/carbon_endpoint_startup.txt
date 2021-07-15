@@ -1,0 +1,13 @@
+(venv) $ git clone git@github.com:matthewfeickert/talk-scipy-2021.git && cd talk-scipy-2021  # This talk as example
+(venv) $ python -m pip install -r core-requirements.txt  # Install funcx and runtime dependencies
+(venv) $ funcx-endpoint configure pyhf  # Generate endpoint and authenticate with Globus
+(venv) $ cp funcx/river-config.py ~/.funcx/pyhf/config.py  # Move our custom endpoint config into place
+(venv) $ funcx-endpoint start pyhf  # Startup endpoint...
+(venv) $ funcx-endpoint list  # ...and good to go!
+YYYY-MM-DD HH:MM:SS endpoint.endpoint_manager:173 [INFO]  Starting endpoint with uuid: 12345678-abcd-abcd-abcd-123456789101
+YYYY-MM-DD HH:MM:SS endpoint.endpoint_manager:238 [INFO]  Launching endpoint daemon process
++---------------+---------+--------------------------------------+
+| Endpoint Name | Status  |             Endpoint ID              |
++===============+=========+======================================+
+| pyhf          | Running | 12345678-abcd-abcd-abcd-123456789101 |
++---------------+---------+--------------------------------------+
