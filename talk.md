@@ -170,7 +170,7 @@ Provide constraints on models through setting best limits
 - Can pose problems with orchestration and efficient scheduling
 - Want to leverage `pyhf` hardware accelerated backends at HPC sites for real analysis speedup
    - Reduce fitting time from hours to minutes
-- Deploy a .bold[(fitting) Function as a Service] to HPC centers
+- Idea: Deploy a `pyhf` based .bold[(fitting) Function as a Service] to HPC centers
 - Example use cases:
    - Large scale ensemble fits for statistical combinations
    - Large dimensional scans of theory parameter space (e.g. Phenomenological Minimal Supersymmetric Standard Model scans)
@@ -188,7 +188,7 @@ Provide constraints on models through setting best limits
 
 .kol-1-2[
 - Designed to orchestrate .bold[scientific workloads] across .bold[heterogeneous computing resources] (clusters, clouds, and supercomputers) and task execution providers (HTCondor, Slurm, Torque, and Kubernetes)
-- Leverages [Parsl](https://parsl.readthedocs.io/) for efficient parallelism and managing concurrent task execution
+- Leverages [Parsl](https://parsl.readthedocs.io/) parallel scripting library for efficient parallelism and managing concurrent task execution
 - Allows users to .bold[register] and then .bold[execute] Python functions in "serverless supercomputing" workflow
 ]
 .kol-1-2[
@@ -219,6 +219,7 @@ Provide constraints on models through setting best limits
    - Authentication (Globus) and authorization
    - Provisioning of nodes on the compute resource
    - Monitoring and management
+- Through funcX endpoint config can use expert knowledge of resource to optimize for task
 ]
 .kol-3-5[
 
@@ -349,6 +350,7 @@ def main(args):
         bkgonly_workspace, backend, endpoint_id=pyhf_endpoint, function_id=prepare_func
     )
 
+    # retrieve function execution output
     workspace = None
     while not workspace:
         try:
@@ -366,7 +368,7 @@ def main(args):
    - `fx.register_function(...)`
 - The local funcX client can then execute the request to the remote funcX endpoint, handling all communication and authentication required
    - `fx.run(...)`
-- While the job run on the remote HPC system, can make periodic requests for finished results
+- While the jobs run on the remote HPC system, can make periodic requests for finished results
    - `fxc.get_result(...)`
    - Returning the _output_ of the user defined functions
 ]
@@ -574,7 +576,7 @@ feickert@ThinkPad-X1:~$ jq .C1N2_Wh_hbb_1000_0.result.cls_obs results.json
 - The nature of FaaS that makes it highly scalable also leads to a problem for taking advantage of just-in-time (JIT) compiled functions
    - JIT is super helpful for performing pseudo-experiment generation
 - To leverage JITed functions there needs to be .bold[memory that is preserved across invocations] of that function
-- Nature of FaaS: Each function call is self contained and .bold[doesn't know about global state]
+- FaaS: Each function call is self contained and .bold[doesn't know about global state]
    - funcX endpoint listens on a queue and invokes functions
 - Still need to know and tune funcX config to specifics of endpoint resource
    - No magic bullet when using HPC center batch systems
@@ -610,7 +612,7 @@ In [6]: %timeit selu_jit(x)
 
 - Through the combined use of the pure-Python libraries .bold[funcX and `pyhf`], demonstrated the ability to .bold[parallelize and accelerate] statistical inference of physics analyses on HPC systems through a .bold[(fitting) FaaS solution]
 - Without having to write any bespoke batch jobs, inference can be registered and executed by analysts with a client Python API that still .bold[achieves the large performance gains] compared to single node execution that is a typical motivation of use of batch systems.
-- Allows for transparently switching workflows from .bold[CPU to GPU] environments
+- Allows for transparently switching workflows between .bold[provider systems] and from .bold[CPU to GPU] environments
 - Not currently able to leverage benefits of .bold[JITed operations]
    - Looking for ways to bridge this
 - All [code](https://github.com/matthewfeickert/talk-scipy-2021) used .bold[public and open source] on GitHub!
