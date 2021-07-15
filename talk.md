@@ -83,6 +83,33 @@ ATLAS
 ]
 ]
 
+<!-- We're all experimental high energy particle physicists
+that work together on an experimental collaboration with 3,000 of our closest
+colleagues called ATLAS that's located just outside of beautiful Geneva, Switzerland at
+CERN's Large Hadron Collider (the LHC).
+Here you can see the obligatory picture of the LHC's huge 27 kilometer circumference
+drawn over the Swiss-French countryside with markers indicating where the main experiments
+reside along the ring about 100 meters below ground.
+
+Our collaboration is formed around the ATLAS detector (seen here with a TRex for scale),
+which you can think of as a cathedral sized digital camera for recording the
+events of colliding beams of protons from the LHC at almost the speed of light for us to then
+later analyze.
+
+We're smashing protons together at extreme energy densities and looking at the splattered
+remains in our detector because we want to
+understand the fundamental forces of the Universe (like electromagnetism and
+the strong and weak nuclear forces) and their interactions with the most elementary
+particles of Matter.
+With a long history of success we've been able to distill down what we know about
+the Universe so far (so that with a bit of manipulation) you can fit it in one equation
+on the side of a coffee cup
+but we know that's not the full picture.
+
+We're still trying to understand some of the physics we do know about, like the Higgs boson we found in 2012,
+as well as see
+if we can find evidence for new physics like Dark Matter. -->
+
 ---
 # Goals of physics analysis at the LHC
 
@@ -109,6 +136,19 @@ Provide constraints on models through setting best limits
 - Model complexity can be huge for complicated searches
 - **Problem:** Time to fit can be .bold[many hours]
 - .blue[`pyhf` Goal:] Empower analysts with fast fits and expressive models
+
+<!-- When we do analyze all that data, we're looking to extract as much information as possible out of it.
+We're using it search for new physics, like when we discovered a new particle that was consistent
+with the theoretical predictions of the Higgs boson in 2012,
+but we're also using it to make precision measurements of the physics we do know about to better understand
+its properties, so that when we don't find evidence of new physics in our searches we can still
+provide the best limit constraints on different possible theories.
+
+All of this requires building statistical models and then fitting those models to the data to perform statistical inference.
+However, the model complexity for some of the analyses can be huge
+resulting in the time to perform these fits being many hours.
+This is obviously a problem, ad we want to try to empower analysts (ourselves) with fast fits and expressive models so that we
+can decrease the time to inference and insight. -->
 
 ---
 # pyhf: pure-Python HistFactory statistical models
