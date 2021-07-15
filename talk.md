@@ -299,6 +299,15 @@ config = Config(
 ]
 
 ---
+# funcX endpoints deployment
+
+- Deployment of `funcX` endpoints is straightforward
+- Example: Deployment to University of Chicago's RIVER cluster
+
+<br>
+.center.width-100[![carbon_endpoint_startup](figures/carbon_endpoint_startup.png)]
+
+---
 # Execution with funcX: Define user functions
 
 .kol-2-3[
