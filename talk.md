@@ -205,6 +205,15 @@ Provide constraints on models through setting best limits
 ]
 
 ---
+# funcX endpoints deployment
+
+- Deployment of `funcX` endpoints is straightforward
+- Example: Deployment to University of Chicago's RIVER cluster with Kubernetes
+
+<br>
+.center.width-100[![carbon_endpoint_startup](figures/carbon_endpoint_startup.png)]
+
+---
 # funcX endpoints on HPC
 
 .kol-2-5[
@@ -221,35 +230,35 @@ Provide constraints on models through setting best limits
 .tiny[
 ```python
 from funcx_endpoint.endpoint.utils.config import Config
-...
-
-user_opts = {
-    "expanse": {
-        "worker_init": ". ~/setup_expanse_funcx_test_env.sh",
-        "scheduler_options": "#SBATCH --gpus=1",
-    }
-}
+from funcx_endpoint.executors import HighThroughputExecutor
+from funcx_endpoint.providers.kubernetes.kube import KubernetesProvider
+from funcx_endpoint.strategies import KubeSimpleStrategy
+from parsl.addresses import address_by_route
 
 config = Config(
     executors=[
         HighThroughputExecutor(
-            label="Expanse_GPU",
-            address=address_by_hostname(),
-            provider=SlurmProvider(
-                "gpu",  # Partition / QOS
-                account="nsa106",
-                nodes_per_block=1,
-                max_blocks=4,
-                init_blocks=1,
-                mem_per_node=96,
-                scheduler_options=user_opts["expanse"]["scheduler_options"],
-                worker_init=user_opts["expanse"]["worker_init"],
-                launcher=SrunLauncher(),
-                walltime="00:10:00",
-                cmd_timeout=120,
+            max_workers_per_node=1,
+            address=address_by_route(),
+            strategy=KubeSimpleStrategy(max_idletime=3600),
+            container_type="docker",
+            scheduler_mode="hard",
+            provider=KubernetesProvider(
+                init_blocks=0,
+                min_blocks=1,
+                max_blocks=100,
+                init_cpu=2,
+                max_cpu=3,
+                init_mem="2000Mi",
+                max_mem="4600Mi",
+                image="bengal1/pyhf-funcx:3.8.0.3.0-1",
+                worker_init="pip freeze",
+                namespace="servicex",
+                incluster_config=True,
             ),
-        ),
+        )
     ],
+    # ...
 )
 ```
 ]
@@ -297,15 +306,6 @@ config = Config(
 - Tasks are allocated to the first block until its `task_capacity` (here 4 tasks) reached
 - Task 5: First block full and <br>`5/9 > parallelism`<br>so Parsl provisions a new block for executing the remaining tasks
 ]
-
----
-# funcX endpoints deployment
-
-- Deployment of `funcX` endpoints is straightforward
-- Example: Deployment to University of Chicago's RIVER cluster with Kubernetes
-
-<br>
-.center.width-100[![carbon_endpoint_startup](figures/carbon_endpoint_startup.png)]
 
 ---
 # Execution with funcX: Define user functions
