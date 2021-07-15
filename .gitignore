@@ -1,0 +1,14 @@
+talk.pdf
+
+.ipynb_checkpoints/
+example_code/plots/
+
+# VSCode
+.vscode/
+
+# temporary output files
+performance_table.md
+endpoint_id.txt
+results.json
+
+input/
