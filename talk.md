@@ -699,7 +699,8 @@ class: middle
 ]
 .kol-1-3.center[
 <br>
-.width-90[[![pyhf_logo](https://iris-hep.org/assets/logos/pyhf-logo.png)](https://github.com/scikit-hep/pyhf)]
+<!-- .width-90[[![pyhf_logo](https://iris-hep.org/assets/logos/pyhf-logo.png)](https://github.com/scikit-hep/pyhf)] -->
+.width-90[[![pyhf_logo](assets/logos/pyhf-logo.png)](https://github.com/scikit-hep/pyhf)]
 ]
 .kol-1-3.center[
 <br>
