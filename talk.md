@@ -629,7 +629,7 @@ In [1]: import jax.numpy as jnp
    ...: from jax import jit, random
 
 In [2]: def selu(x, alpha=1.67, lmbda=1.05):
-   ...:     return lmbda * jnp.where(x > 0, x, alpha * jnp.exp(x) - alpha)
+   ...:     return lmbda \* jnp.where(x > 0, x, alpha \* jnp.exp(x) - alpha)
    ...:
 
 In [3]: key = random.PRNGKey(0)
