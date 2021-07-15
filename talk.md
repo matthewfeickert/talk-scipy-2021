@@ -686,12 +686,17 @@ In [6]: %timeit selu_jit(x)
 - Allows for transparently switching workflows from .bold[CPU to GPU] environments
 - Not currently able to leverage benefits of .bold[JITed operations]
    - Looking for ways to bridge this
-- .bold[Motivates investigation] of the scaling performance for large scale ensemble fits in the case of statistical combinations of analyses and large dimensional scans of theory parameter space (e.g. phenomenological minimal supersymmetric standard model (pMSSM) scans)
-- All code used .bold[public and open source]!
-   - `pyhf` ([GitHub](https://github.com/scikit-hep/pyhf))
-   - funcX ([GitHub](https://github.com/funcx-faas/funcX))
-   - Parsl ([GitHub](https://github.com/Parsl/parsl))
-   - Code for examples shown ([GitHub](https://github.com/matthewfeickert/talk-scipy-2021))
+- All [code](https://github.com/matthewfeickert/talk-scipy-2021) used .bold[public and open source] on GitHub!
+.kol-1-1[
+.kol-1-3.center[
+.width-90[[![pyhf_logo](assets/logos/pyhf-logo.png)](https://github.com/scikit-hep/pyhf)]
+]
+.kol-1-3.center[]
+.kol-1-3.center[
+<br>
+.width-100[[![funcX-light](figures/funcX-light.png)](https://github.com/funcx-faas/funcX)]
+]
+]
 
 ---
 class: middle
